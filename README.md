@@ -1,95 +1,522 @@
-# Sustainable AI Case Competition – Decision Support Prototype
+# The Illinois Sustainability Impact Engine
+
+> An AI-powered platform for discovering sustainability research expertise and facilitating interdisciplinary collaboration across university departments.
+
+[![Case Competition](https://img.shields.io/badge/Case%20Competition-Sustainability-blue)]()
+[![Platform](https://img.shields.io/badge/Platform-Power%20BI-orange)]()
+[![AI](https://img.shields.io/badge/AI-Enabled-green)]()
+
+---
+
+## 📋 Table of Contents
+
+- [Overview](#overview)
+- [Problem Statement](#problem-statement)
+- [Solution Architecture](#solution-architecture)
+- [Platform Components](#platform-components)
+- [Technical Implementation](#technical-implementation)
+- [Data Pipeline](#data-pipeline)
+- [Collaboration Compatibility Score (CCS)](#collaboration-compatibility-score-ccs)
+- [Screenshots](#screenshots)
+- [Project Documentation](#project-documentation)
+- [Impact & Insights](#impact--insights)
+- [Skills Demonstrated](#skills-demonstrated)
+- [Future Work](#future-work)
+
+---
 
 ## Overview
-This project was developed as part of a **sustainability-focused case competition**, where the objective was to design a **practical, AI-enabled solution** that balances **environmental impact** with **business feasibility**.
 
-Rather than building a heavy ML system, the focus was on **problem framing, decision intelligence, and stakeholder usability** — translating sustainability goals into **actionable insights** using an AI-powered prototype built in **Google AI Studio**.
+**The Illinois Sustainability Impact Engine** is a comprehensive decision-support platform designed to address the fragmentation of sustainability research across university departments. The solution enables researchers, faculty, and leadership to discover expertise, identify collaboration opportunities, and make data-driven decisions about sustainability initiatives aligned with the UN Sustainable Development Goals (SDGs).
 
-## Project Documentation
-- [Problem Statement](docs/01_problem_statement.md)
-- [Stakeholder Analysis](docs/02_stakeholder_analysis.md)
-- [Solution Architecture](docs/03_solution_architecture.md)
-- [Scoring Logic & Metrics](docs/04_scoring_and_metrics.md)
-- [Insights & Impact](docs/05_insights_and_impact.md)
-- [Limitations & Future Work](docs/06_limitations_and_future_work.md)
+### Core Value Proposition
+
+- **🔍 Discovery**: Quickly identify sustainability research expertise across 17 UN SDGs
+- **🤝 Collaboration**: AI-powered matching system connects researchers with complementary skills
+- **📊 Insights**: Visualize research coverage, gaps, and trends to inform strategic decisions
+- **🎯 Impact**: Support interdisciplinary research formation and strategic funding allocation
 
 ---
 
-## Business Problem
-Organizations increasingly face pressure to adopt sustainable practices, but decision-makers struggle with:
-- Translating sustainability goals into operational decisions
-- Evaluating trade-offs between **cost, environmental impact, and scalability**
-- Accessing decision-support tools that are intuitive and explainable
+## Problem Statement
 
-The case challenged teams to propose a solution that enables **data-informed sustainability decisions** without compromising business outcomes.
+Universities generate extensive sustainability-related research, but this work is often fragmented across departments, disciplines, and individuals, leading to:
 
----
+- ❌ Limited visibility into existing sustainability expertise
+- ❌ Difficulty identifying collaborators with complementary skill sets
+- ❌ Lack of structured insights into research coverage across UN SDGs
+- ❌ Manual, time-intensive processes for finding research partners or gaps
 
-## Solution Summary
-We designed an **AI-powered decision-support prototype** that:
-- Guides users through sustainability-related decisions
-- Incorporates business constraints (cost, feasibility, adoption)
-- Provides structured, explainable recommendations
-- Supports scenario-based evaluation rather than black-box outputs
-
-The prototype was implemented using **Google AI Studio** to simulate real-world user interaction with an AI assistant.
+**Result**: Opportunities for interdisciplinary collaboration and strategic sustainability initiatives are frequently missed.
 
 ---
 
-## AI Prototype (Google AI Studio)
-- Platform: **Google AI Studio**
-- Type: Interactive AI assistant / workflow prototype
+## Solution Architecture
 
-### What the Prototype Does
-- Collects structured user inputs related to sustainability goals and business constraints
+The platform consists of **five integrated components** that work together to provide a complete sustainability research ecosystem:
+
+```
+┌─────────────────────────────────────────────────────────┐
+│         THE ILLINOIS SUSTAINABILITY IMPACT ENGINE       │
+├─────────────────────────────────────────────────────────┤
+│                                                          │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐ │
+│  │Sustainability│  │   Research   │  │   Impact      │ │
+│  │  Dashboard   │  │  Coverage   │  │   Engine      │ │
+│  │              │  │  Analysis   │  │               │ │
+│  │  • SDG Maps  │  │  • Gaps     │  │  • Metrics    │ │
+│  │  • Trends    │  │  • Trends   │  │  • Outcomes   │ │
+│  └──────┬───────┘  └──────┬──────┘  └──────┬───────┘ │
+│         │                  │                 │          │
+│         └──────────────────┼─────────────────┘          │
+│                            │                            │
+│                  ┌─────────▼─────────┐                  │
+│                  │ Collaboration Hub │                  │
+│                  │                   │                  │
+│                  │  • CCS Algorithm  │                  │
+│                  │  • Matching      │                  │
+│                  │  • Recommendations                  │
+│                  └─────────┬─────────┘                  │
+│                            │                            │
+│                  ┌─────────▼─────────┐                  │
+│                  │  AI Prototype    │                  │
+│                  │  (Google AI)     │                  │
+│                  │                   │                  │
+│                  │  • Interactive  │                  │
+│                  │  • Guided Flow   │                  │
+│                  │  • Explanations  │                  │
+│                  └──────────────────┘                  │
+│                                                          │
+│  Data Pipeline: CSV → Python Scripts → Power BI        │
+└─────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Platform Components
+
+### 1. **Sustainability Dashboard** (Power BI)
+**Purpose**: High-level visualization of institutional sustainability research
+
+**Features**:
+- Visualizes research activity across all 17 UN Sustainable Development Goals
+- Interactive exploration of coverage, gaps, and trends
+- Enables quick assessment of institutional strengths
+- Supports strategic decision-making for leadership and donors
+
+**Use Cases**:
+- Leadership: "What are our institutional strengths in sustainability?"
+- Donors: "Where should we invest funding?"
+- Researchers: "What SDGs are most active at our institution?"
+
+---
+
+### 2. **Research Coverage Analysis** (Power BI)
+**Purpose**: Detailed analysis of research distribution and gaps
+
+**Features**:
+- Identifies under-researched SDGs
+- Tracks publication trends over time
+- Analyzes departmental research distribution
+- Highlights research opportunities
+
+**Use Cases**:
+- Students: "Which SDGs need more research?"
+- Faculty: "What are emerging research areas?"
+- Leadership: "Where are our research gaps?"
+
+---
+
+### 3. **Collaboration Hub** (Power BI)
+**Purpose**: AI-powered researcher matching and collaboration recommendations
+
+**Features**:
+- Matches faculty and researchers based on compatibility
+- Surfaces top collaboration recommendations using CCS algorithm
+- Provides explainable recommendations with supporting reasoning
+- Encourages interdisciplinary research team formation
+
+**Use Cases**:
+- Faculty: "Who should I collaborate with on SDG 13?"
+- PhD Candidates: "Find me potential advisors in sustainability"
+- Researchers: "Show me researchers with complementary methods"
+
+**How It Works**:
+1. User searches for collaborators (by SDG, method, or department)
+2. System calculates Collaboration Compatibility Score (CCS) for all potential matches
+3. Top matches are ranked and displayed with explanations
+4. User can explore match details and initiate collaboration
+
+---
+
+### 4. **Impact Engine** (Power BI)
+**Purpose**: Measure and visualize research impact and sustainability outcomes
+
+**Features**:
+- Tracks research impact metrics
+- Visualizes sustainability outcomes
+- Measures institutional impact across SDGs
+- Supports impact reporting for stakeholders
+
+**Use Cases**:
+- Leadership: "What's our research impact on sustainability?"
+- Donors: "Show me ROI on sustainability research funding"
+- Researchers: "How can I measure my research impact?"
+
+---
+
+### 5. **AI Prototype** (Google AI Studio)
+**Purpose**: Interactive AI assistant for guided sustainability decision-making
+
+**Features**:
+- Interactive AI assistant / workflow prototype
+- Collects structured user inputs related to sustainability goals
 - Evaluates trade-offs across environmental and operational dimensions
 - Produces clear recommendations with supporting reasoning
+- Supports scenario-based evaluation
 
-🔗 **Prototype Link:**  
+**Use Cases**:
+- Researchers: "Help me decide which sustainability project to pursue"
+- Leadership: "Guide me through strategic sustainability planning"
+- Students: "What sustainability research should I focus on?"
+
+🔗 **Prototype Link**:  
 > *(https://aistudio.google.com/apps/drive/1X32F5D6MjYPmdbODCHqlfB8VLEVzwbeE?fullscreenApplet=true&showPreview=true&showAssistant=true)*
 
-> Note: If access is restricted, screenshots and workflow visuals are provided below and in the `/screenshots` folder.
+> Note: If access is restricted, screenshots and workflow visuals are provided in the `/screenshots` folder.
 
 ---
 
-## Sustainability Impact
-The solution emphasizes:
-- Measurable sustainability considerations
-- Transparency in trade-offs
-- Decision accountability for business stakeholders
+### Component Integration
 
-Rather than optimizing for a single metric (e.g., emissions only), the tool encourages **balanced decision-making** aligned with real-world constraints.
+**User Journey Example**:
 
----
-
-## My Role
-- Structured the problem using a **business analytics lens**
-- Defined sustainability KPIs and decision criteria
-- Designed the AI interaction flow and reasoning logic
-- Contributed to final recommendations and case presentation
+1. **Discovery Phase**: User opens **Sustainability Dashboard** → sees SDG 9 (Industry, Innovation) is well-researched
+2. **Analysis Phase**: Checks **Research Coverage** → identifies SDG 13 (Climate Action) as a gap
+3. **Collaboration Phase**: Uses **Collaboration Hub** → searches for collaborators working on SDG 13
+4. **Matching Phase**: Gets matched recommendations → CCS scores explain why matches are good
+5. **Impact Phase**: Uses **Impact Engine** → sees potential impact of forming this collaboration
+6. **Decision Phase**: Uses **AI Prototype** → gets guided recommendations on next steps
 
 ---
 
-## Key Skills Demonstrated
-- Case structuring & problem solving  
-- Sustainability analytics  
-- AI product prototyping (no/low-code)  
-- Business decision modeling  
-- Stakeholder-focused communication  
+## Technical Implementation
+
+### Platform Stack
+- **Visualization**: Power BI dashboards (4 interactive components)
+- **Data Processing**: Python scripts for data transformation and aggregation
+- **AI/ML**: Algorithm-based compatibility scoring + Google AI Studio prototype
+- **Data Source**: University publication metadata (CSV format)
+
+### Technology Components
+
+1. **Data Processing Pipeline**
+   - Aggregates publication data into researcher profiles
+   - Infers research methods from keywords and abstracts
+   - Calculates career stages from publication history
+   - Extracts and ranks SDG associations
+
+2. **Collaboration Compatibility Algorithm**
+   - Multi-factor scoring system
+   - Weighted component analysis
+   - Explainable recommendation generation
+
+3. **Interactive Dashboards**
+   - SDG coverage visualization
+   - Research trend analysis
+   - Collaboration match interface
+   - Impact metrics tracking
+
+4. **AI Assistant**
+   - Google AI Studio workflow
+   - Structured decision support
+   - Scenario evaluation
 
 ---
 
-## Limitations & Future Work
-This prototype demonstrates concept feasibility rather than production deployment.
+## Data Pipeline
 
-Potential future enhancements include:
-- Integration with real operational and sustainability data
-- Quantitative optimization models
-- KPI dashboards for ongoing monitoring
-- Validation using historical outcomes
+The solution processes raw publication data through a multi-stage pipeline:
+
+```
+Original CSV (filtered_publications.csv)
+    ↓
+[build_collab_hub_from_scratch.py]
+    ↓
+Researcher_Profiles_For_PowerBI.csv
+    ↓
+[generate_ccs_demo_data.py]
+    ↓
+CCS_Demo_Data.csv (for Power BI visualization)
+```
+
+### Data Transformations
+
+1. **Researcher Profile Aggregation** (`build_collab_hub_from_scratch.py`)
+   - Consolidates multiple publications per researcher
+   - Identifies primary SDG focus (from top 1/2/3 SDG columns)
+   - Infers research methods from keywords/abstracts
+   - Calculates career stage from first publication year
+   - Extracts top keywords by frequency
+
+2. **Compatibility Score Generation** (`generate_ccs_demo_data.py`)
+   - Creates simulated user searches with varied criteria
+   - Matches researchers based on compatibility algorithm
+   - Generates explainable recommendations
+   - Calculates CCS scores for all matches
+
+### Python Scripts
+
+The repository includes the following Python scripts in the `/scripts` folder:
+
+- **`build_collab_hub_from_scratch.py`**: Processes raw publication CSV and creates researcher profiles
+- **`generate_ccs_demo_data.py`**: Generates collaboration matches and calculates CCS scores
+
+For detailed data processing documentation, see [CCS_DEMO_DATA_EXPLANATION.md](CCS_DEMO_DATA_EXPLANATION.md) and [SDG_MATCHING_EXPLANATION.md](SDG_MATCHING_EXPLANATION.md).
+
+---
+
+## Collaboration Compatibility Score (CCS)
+
+The CCS algorithm evaluates potential research collaborations using a weighted multi-factor model:
+
+### Scoring Components
+
+| Component | Weight | Range | Description |
+|-----------|--------|-------|-------------|
+| **Topic Match** | 45% | 70-95 | SDG alignment (exact match, related SDGs, or different clusters) |
+| **Methodological Match** | 40% | 70-95 | Method complementarity (complementary methods score higher) |
+| **Career Fit** | 15% | 70-92 | Career stage pairing (mentorship opportunities score higher) |
+
+### Calculation Formula
+
+```
+CCS_Total = ROUND((Topic_Match × 0.45) + (Method_Match × 0.40) + (Career_Fit × 0.15))
+```
+
+### Scoring Logic
+
+**Topic Match (Hierarchical Matching)**:
+- **90-95**: Identical primary SDGs
+- **85-89**: Primary SDG appears in other's SDG list
+- **80-84**: Any SDG overlap between researchers
+- **75-79**: Adjacent SDGs (e.g., 8 and 9)
+- **72-76**: Same SDG category (Social, Economic, Environmental)
+- **70-74**: Default (no match)
+
+**Method Match**:
+- **85-95**: Complementary methods (e.g., Theoretical + Empirical)
+- **70-80**: Same or similar methods
+
+**Career Fit**:
+- **85-92**: Mentorship opportunities (Pre-Tenure + Post-Tenure/Senior)
+- **75-82**: Peer collaboration (same stage, especially Post-Tenure)
+- **70-80**: Other combinations
+
+### Example Output
+
+```
+User: Dr. Smith (SDG 9, Computational, Post-Tenure)
+Match: Dr. Jones (SDG 9, Empirical, Pre-Tenure)
+
+Topic_Match: 93 (exact SDG match)
+Method_Match: 91 (complementary methods)
+Career_Fit: 87 (mentorship opportunity)
+CCS_Total: 91
+
+Explanation: "Expertise in Machine Learning and Data Analytics. 
+Highly complementary methods (Computational + Empirical) create 
+exceptional research synergy. Strong mentorship pairing: 
+Post-Tenure and Pre-Tenure researchers."
+```
+
+For detailed scoring documentation, see [docs/04_scoring_and_metrics.md](docs/04_scoring_and_metrics.md) and [SDG_MATCHING_EXPLANATION.md](SDG_MATCHING_EXPLANATION.md).
+
+---
+
+## Screenshots
+
+### Sustainability Dashboard
+![Sustainability Dashboard](screenshots/Sustainability.png)
+*High-level visualization of research activity across all 17 UN SDGs*
+
+### Research Coverage Analysis
+![Research Coverage](screenshots/research.png)
+*Detailed analysis of research distribution, gaps, and trends*
+
+### Collaboration Hub
+![Collaboration Hub](screenshots/collabration_hub.png)
+*AI-powered researcher matching with CCS scoring*
+
+### Impact Engine
+![Impact Engine](screenshots/Impact_engine_pro.png)
+*Research impact metrics and sustainability outcomes visualization*
+
+---
+
+## Project Documentation
+
+Comprehensive documentation is available in the `/docs` folder:
+
+- 📄 [Problem Statement](docs/01_problem_statement%20(1).md) - Detailed problem analysis
+- 👥 [Stakeholder Analysis](docs/02_stakeholder_analysis.md) - User personas and needs
+- 🏗️ [Solution Architecture](docs/03_solution_architecture.md) - System design and components
+- 📊 [Scoring Logic & Metrics](docs/04_scoring_and_metrics.md) - CCS algorithm details
+- 💡 [Insights & Impact](docs/05_insights_and_impact.md) - Key findings and value proposition
+- 🔮 [Limitations & Future Work](docs/06_limitations_and_future_work.md) - Roadmap and enhancements
+
+### Additional Resources
+
+- 📋 [CCS Demo Data Explanation](CCS_DEMO_DATA_EXPLANATION.md) - Data processing pipeline documentation
+- 🎯 [SDG Matching Explanation](SDG_MATCHING_EXPLANATION.md) - Detailed SDG matching algorithm
+- 📊 [Dashboard Summary Documentation](!!!%20for%20distribution%20dashboard%20summary%20documentation.docx) - Power BI dashboard guide
+- 📄 [Collaboration Hub Documentation](Collab%20hub.pdf) - Collaboration features guide
+- 📑 [Full Project Documentation](The%20Illinois%20Sustainability%20Impact%20Engine(1).docx.pdf) - Complete project documentation
+
+---
+
+## Impact & Insights
+
+### Key Findings
+
+- ✅ Certain SDGs receive significantly more research attention than others
+- ✅ Collaboration opportunities exist across departments that rarely interact
+- ✅ Early-career researchers benefit from structured discovery tools
+- ✅ Data-driven insights support strategic funding decisions
+
+### Measurable Impact
+
+- **Visibility**: Improves visibility of sustainability expertise across the institution
+- **Efficiency**: Reduces friction in forming interdisciplinary research teams
+- **Strategy**: Supports data-driven decision making for leadership and donors
+- **Culture**: Moves from passive information access to proactive insight generation
+
+For detailed impact analysis, see [docs/05_insights_and_impact.md](docs/05_insights_and_impact.md).
+
+---
+
+## Skills Demonstrated
+
+### Technical Skills
+- **Data Engineering**: ETL pipeline design and implementation
+- **Data Analysis**: Statistical analysis and pattern recognition
+- **Algorithm Design**: Multi-factor scoring system development
+- **Data Visualization**: Power BI dashboard creation (4 integrated components)
+- **Python Programming**: Data processing and transformation scripts
+- **AI/ML Integration**: Google AI Studio prototype development
+
+### Business & Analytical Skills
+- **Problem Structuring**: Business analytics lens for complex problems
+- **Stakeholder Analysis**: Multi-user persona design
+- **Decision Modeling**: Quantitative scoring framework development
+- **Sustainability Analytics**: UN SDG mapping and analysis
+- **Strategic Thinking**: Institutional impact assessment
+
+### Communication Skills
+- **Technical Documentation**: Comprehensive project documentation
+- **Visual Storytelling**: Dashboard design and data visualization
+- **Case Presentation**: Competition presentation development
+- **Stakeholder Communication**: User-focused solution design
+
+---
+
+## Future Work
+
+### Current Limitations
+- Prototype-level implementation
+- Limited availability of standardized research metadata
+- Qualitative reasoning over automated optimization
+
+### Planned Enhancements
+
+1. **Data Integration**
+   - Integration with live publication and grant databases
+   - Real-time data updates
+   - Expanded data sources (conferences, patents, etc.)
+
+2. **Advanced Analytics**
+   - Advanced NLP for topic modeling
+   - Predictive analytics for collaboration success
+   - Network analysis for research communities
+
+3. **Platform Features**
+   - Dynamic KPI tracking over time
+   - User profiles and preferences
+   - Notification system for new matches
+   - Integration between all 5 components
+
+4. **Expansion**
+   - Beyond sustainability to other research domains
+   - Multi-institutional collaboration
+   - Industry partnership matching
+
+For detailed future work roadmap, see [docs/06_limitations_and_future_work.md](docs/06_limitations_and_future_work.md).
+
+---
+
+## Project Context
+
+This project was developed as part of a **sustainability-focused case competition**, where the objective was to design a practical, AI-enabled solution that balances environmental impact with business feasibility.
+
+### Competition Focus
+
+Rather than building a heavy ML system, the focus was on:
+- Problem framing and decision intelligence
+- Stakeholder usability and adoption
+- Translating sustainability goals into actionable insights
+- Balancing technical sophistication with practical implementation
+
+---
+
+## Repository Structure
+
+```
+sustainability_case_competition/
+├── README.md                          # This file
+├── requirements.txt                   # Python dependencies
+├── .gitignore                         # Git ignore rules
+├── docs/                              # Project documentation
+│   ├── 01_problem_statement (1).md
+│   ├── 02_stakeholder_analysis.md
+│   ├── 03_solution_architecture.md
+│   ├── 04_scoring_and_metrics.md
+│   ├── 05_insights_and_impact.md
+│   └── 06_limitations_and_future_work.md
+├── scripts/                           # Python data processing scripts
+│   ├── README.md
+│   ├── build_collab_hub_from_scratch.py
+│   └── generate_ccs_demo_data.py
+├── screenshots/                       # Dashboard screenshots
+│   ├── Sustainability.png
+│   ├── research.png
+│   ├── collabration_hub.png
+│   └── Impact_engine_pro.png
+├── presentation/                      # Competition presentation
+│   └── Case Comp.pdf
+├── CCS_DEMO_DATA_EXPLANATION.md       # Data pipeline documentation
+├── SDG_MATCHING_EXPLANATION.md        # SDG matching algorithm
+└── [Additional documentation files]
+```
 
 ---
 
 ## Disclaimer
+
 This project is an academic case competition submission.  
-No proprietary or confidential data was used.
+No proprietary or confidential data was used.  
+All data processing and analysis was performed on publicly available or anonymized university publication metadata.
+
+---
+
+## Contact & Links
+
+- 📧 For questions or collaboration opportunities, please reach out through GitHub
+- 📊 Power BI dashboards available upon request
+- 📄 Full presentation materials available in `/presentation` folder
+- 🤖 AI Prototype: [Google AI Studio Link](https://aistudio.google.com/apps/drive/1X32F5D6MjYPmdbODCHqlfB8VLEVzwbeE?fullscreenApplet=true&showPreview=true&showAssistant=true)
+
+---
+
+**Built with** ❤️ **for sustainable research collaboration**
+
+*Last updated: 2025*
