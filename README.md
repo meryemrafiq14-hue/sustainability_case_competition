@@ -407,9 +407,6 @@ Comprehensive documentation is available in the `/docs` folder:
 - 🧾 [Data Sources](docs/methodology/DATA_SOURCES.md) - Fields used and derived
 - 📚 [Data Dictionary](docs/methodology/DATA_DICTIONARY.md) - Column definitions for demo data
 - 🧪 [Methodology Summary](docs/methodology/METHODOLOGY.md) - Pipeline, scoring, limitations
-- 📊 [Dashboard Summary Documentation](!!!%20for%20distribution%20dashboard%20summary%20documentation.docx) - Power BI dashboard guide
-- 📄 [Collaboration Hub Documentation](Collab%20hub.pdf) - Collaboration features guide
-- 📑 [Full Project Documentation](The%20Illinois%20Sustainability%20Impact%20Engine(1).docx.pdf) - Complete project documentation
 
 ---
 
@@ -552,7 +549,7 @@ All data processing and analysis was performed on publicly available or anonymiz
 ## Contact & Links
 
 - 📧 For questions or collaboration opportunities, please reach out through GitHub
-- 📊 Power BI dashboards available upon request
+- 📊 Power BI report: https://app.powerbi.com/groups/me/reports/8c00bb12-b145-4b39-ac02-85b5aa41f628/c49807a08d6527738b11?experience=power-bi (requires access)
 - 📄 Full presentation materials available in `/presentation` folder
 - 🤖 AI Prototype: [Try the AI Prototype](https://aistudio.google.com/apps/drive/1X32F5D6MjYPmdbODCHqlfB8VLEVzwbeE?showPreview=true&showAssistant=true)
 
