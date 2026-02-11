@@ -1,6 +1,8 @@
 # Data Processing Scripts
 
-This folder contains Python scripts for processing publication data and generating collaboration matches.
+This folder documents the expected Python scripts for processing publication
+data and generating collaboration matches. The scripts are not included in this
+public repository.
 
 ## Scripts
 
@@ -31,14 +33,9 @@ Generates collaboration matches and calculates Collaboration Compatibility Score
 
 ## Usage
 
-```bash
-# Install dependencies
-pip install -r requirements.txt
-
-# Run data processing pipeline
-python scripts/build_collab_hub_from_scratch.py
-python scripts/generate_ccs_demo_data.py
-```
+If you have access to the scripts, place them in this folder and run them
+locally against the raw publication data. This repo only includes the demo
+output (`data/CCS_Demo_Data.csv`).
 
 ## Data Flow
 
@@ -59,6 +56,5 @@ For detailed documentation, see:
 - [SDG_MATCHING_EXPLANATION.md](../docs/methodology/SDG_MATCHING_EXPLANATION.md)
 
 ## Note on availability
-If the Python scripts are not included in this public repository, this README
-documents their expected inputs and outputs so reviewers can still understand
-the pipeline. If you have access to the scripts, place them in this folder.
+This README documents expected inputs and outputs so reviewers can understand
+the pipeline even without the scripts.

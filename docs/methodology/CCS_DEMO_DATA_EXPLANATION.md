@@ -5,7 +5,12 @@
 
 ## 📊 **OVERVIEW**
 
-The `data/CCS_Demo_Data.csv` file contains **simulated collaboration matches** for demonstration purposes in your Power BI presentation. It shows how the Collaboration Compatibility Score (CCS) algorithm would work when researchers search for potential collaborators.
+The `data/CCS_Demo_Data.csv` file contains **simulated collaboration matches**
+for demonstration purposes in your Power BI presentation. It shows how the
+Collaboration Compatibility Score (CCS) algorithm would work when researchers
+search for potential collaborators. The demo file was generated using the
+scripted logic described below; the scripts are not included in this public
+repository.
 
 ---
 

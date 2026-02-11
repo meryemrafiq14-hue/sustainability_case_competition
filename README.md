@@ -235,7 +235,9 @@ The platform consists of **five integrated components** that work together to pr
 
 ## Data Pipeline
 
-The solution processes raw publication data through a multi-stage pipeline:
+The solution processes raw publication data through a multi-stage pipeline. The
+demo data in this repo was generated using the logic below; the scripts are not
+included in this public version.
 
 ```
 Original CSV (filtered_publications.csv)
@@ -264,12 +266,10 @@ data/CCS_Demo_Data.csv (for Power BI visualization)
    - Generates explainable recommendations
    - Calculates CCS scores for all matches
 
-### Python Scripts
+### Pipeline Scripts (not included)
 
-The repository includes the following Python scripts in the `/scripts` folder:
-
-- **`build_collab_hub_from_scratch.py`**: Processes raw publication CSV and creates researcher profiles
-- **`generate_ccs_demo_data.py`**: Generates collaboration matches and calculates CCS scores
+The pipeline below reflects the logic used to generate the demo data. The
+scripts are not included in this public repository.
 
 For detailed data processing documentation, see [CCS_DEMO_DATA_EXPLANATION.md](docs/methodology/CCS_DEMO_DATA_EXPLANATION.md) and [SDG_MATCHING_EXPLANATION.md](docs/methodology/SDG_MATCHING_EXPLANATION.md).
 
@@ -365,7 +365,9 @@ Raw publication data → researcher profiles → CCS demo matches:
    Input: `Researcher_Profiles_For_PowerBI.csv`  
    Output: `data/CCS_Demo_Data.csv`
 
-See `docs/methodology/CCS_DEMO_DATA_EXPLANATION.md` and `docs/methodology/SDG_MATCHING_EXPLANATION.md` for full logic.
+See `docs/methodology/CCS_DEMO_DATA_EXPLANATION.md` and
+`docs/methodology/SDG_MATCHING_EXPLANATION.md` for the full logic used to
+generate the demo data.
 
 ---
 
