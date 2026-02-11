@@ -180,8 +180,7 @@ The platform consists of **five integrated components** that work together to pr
 - Leadership: "Guide me through strategic sustainability planning"
 - Students: "What sustainability research should I focus on?"
 
-🔗 **Prototype Link**:  
-> *(https://aistudio.google.com/apps/drive/1X32F5D6MjYPmdbODCHqlfB8VLEVzwbeE?fullscreenApplet=true&showPreview=true&showAssistant=true)*
+🔗 **Prototype Link**: [Try the AI Prototype](https://aistudio.google.com/apps/drive/1X32F5D6MjYPmdbODCHqlfB8VLEVzwbeE?showPreview=true&showAssistant=true)
 
 > Note: If access is restricted, screenshots and workflow visuals are provided in the `/screenshots` folder.
 
@@ -334,6 +333,42 @@ For detailed scoring documentation, see [docs/04_scoring_and_metrics.md](docs/04
 
 ---
 
+## Data & Methodology (Demo Transparency)
+
+This repo includes **demo data** designed to illustrate how the collaboration scoring works.
+
+**What's real**
+- Researcher names and departments
+- SDG labels aggregated from publication metadata
+- Methods inferred from keywords/abstracts
+- Career stage inferred from first publication year
+- Top keywords for explanations
+
+**What's simulated**
+- Some user search inputs (SDG/method) are varied to show multiple scenarios
+- All scores (Topic/Method/Career/CCS) are calculated by the algorithm
+- Explanations are generated from keywords + scoring logic
+
+**Important note:** The CCS score is **directional and explainable**, not a predictive model of collaboration success.
+
+---
+
+## Reproducibility (Pipeline)
+
+Raw publication data → researcher profiles → CCS demo matches:
+
+1. `build_collab_hub_from_scratch.py`  
+   Input: publication CSV  
+   Output: `Researcher_Profiles_For_PowerBI.csv`
+
+2. `generate_ccs_demo_data.py`  
+   Input: `Researcher_Profiles_For_PowerBI.csv`  
+   Output: `CCS_Demo_Data.csv`
+
+See `CCS_DEMO_DATA_EXPLANATION.md` and `SDG_MATCHING_EXPLANATION.md` for full logic.
+
+---
+
 ## Screenshots
 
 ### Sustainability Dashboard
@@ -358,7 +393,7 @@ For detailed scoring documentation, see [docs/04_scoring_and_metrics.md](docs/04
 
 Comprehensive documentation is available in the `/docs` folder:
 
-- 📄 [Problem Statement](docs/01_problem_statement%20(1).md) - Detailed problem analysis
+- 📄 [Problem Statement](docs/01_problem_statement.md) - Detailed problem analysis
 - 👥 [Stakeholder Analysis](docs/02_stakeholder_analysis.md) - User personas and needs
 - 🏗️ [Solution Architecture](docs/03_solution_architecture.md) - System design and components
 - 📊 [Scoring Logic & Metrics](docs/04_scoring_and_metrics.md) - CCS algorithm details
@@ -369,6 +404,9 @@ Comprehensive documentation is available in the `/docs` folder:
 
 - 📋 [CCS Demo Data Explanation](CCS_DEMO_DATA_EXPLANATION.md) - Data processing pipeline documentation
 - 🎯 [SDG Matching Explanation](SDG_MATCHING_EXPLANATION.md) - Detailed SDG matching algorithm
+- 🧾 [Data Sources](DATA_SOURCES.md) - Fields used and derived
+- 📚 [Data Dictionary](DATA_DICTIONARY.md) - Column definitions for demo data
+- 🧪 [Methodology Summary](METHODOLOGY.md) - Pipeline, scoring, limitations
 - 📊 [Dashboard Summary Documentation](!!!%20for%20distribution%20dashboard%20summary%20documentation.docx) - Power BI dashboard guide
 - 📄 [Collaboration Hub Documentation](Collab%20hub.pdf) - Collaboration features guide
 - 📑 [Full Project Documentation](The%20Illinois%20Sustainability%20Impact%20Engine(1).docx.pdf) - Complete project documentation
@@ -513,7 +551,7 @@ All data processing and analysis was performed on publicly available or anonymiz
 - 📧 For questions or collaboration opportunities, please reach out through GitHub
 - 📊 Power BI dashboards available upon request
 - 📄 Full presentation materials available in `/presentation` folder
-- 🤖 AI Prototype: [Google AI Studio Link](https://aistudio.google.com/apps/drive/1X32F5D6MjYPmdbODCHqlfB8VLEVzwbeE?fullscreenApplet=true&showPreview=true&showAssistant=true)
+- 🤖 AI Prototype: [Try the AI Prototype](https://aistudio.google.com/apps/drive/1X32F5D6MjYPmdbODCHqlfB8VLEVzwbeE?showPreview=true&showAssistant=true)
 
 ---
 

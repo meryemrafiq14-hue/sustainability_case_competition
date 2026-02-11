@@ -57,3 +57,8 @@ CCS_Demo_Data.csv
 For detailed documentation, see:
 - [CCS_DEMO_DATA_EXPLANATION.md](../CCS_DEMO_DATA_EXPLANATION.md)
 - [SDG_MATCHING_EXPLANATION.md](../SDG_MATCHING_EXPLANATION.md)
+
+## Note on availability
+If the Python scripts are not included in this public repository, this README
+documents their expected inputs and outputs so reviewers can still understand
+the pipeline. If you have access to the scripts, place them in this folder.
