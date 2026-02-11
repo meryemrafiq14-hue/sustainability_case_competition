@@ -246,7 +246,7 @@ Researcher_Profiles_For_PowerBI.csv
     ↓
 [generate_ccs_demo_data.py]
     ↓
-CCS_Demo_Data.csv (for Power BI visualization)
+data/CCS_Demo_Data.csv (for Power BI visualization)
 ```
 
 ### Data Transformations
@@ -271,7 +271,7 @@ The repository includes the following Python scripts in the `/scripts` folder:
 - **`build_collab_hub_from_scratch.py`**: Processes raw publication CSV and creates researcher profiles
 - **`generate_ccs_demo_data.py`**: Generates collaboration matches and calculates CCS scores
 
-For detailed data processing documentation, see [CCS_DEMO_DATA_EXPLANATION.md](CCS_DEMO_DATA_EXPLANATION.md) and [SDG_MATCHING_EXPLANATION.md](SDG_MATCHING_EXPLANATION.md).
+For detailed data processing documentation, see [CCS_DEMO_DATA_EXPLANATION.md](docs/methodology/CCS_DEMO_DATA_EXPLANATION.md) and [SDG_MATCHING_EXPLANATION.md](docs/methodology/SDG_MATCHING_EXPLANATION.md).
 
 ---
 
@@ -329,7 +329,7 @@ exceptional research synergy. Strong mentorship pairing:
 Post-Tenure and Pre-Tenure researchers."
 ```
 
-For detailed scoring documentation, see [docs/04_scoring_and_metrics.md](docs/04_scoring_and_metrics.md) and [SDG_MATCHING_EXPLANATION.md](SDG_MATCHING_EXPLANATION.md).
+For detailed scoring documentation, see [docs/04_scoring_and_metrics.md](docs/04_scoring_and_metrics.md) and [SDG_MATCHING_EXPLANATION.md](docs/methodology/SDG_MATCHING_EXPLANATION.md).
 
 ---
 
@@ -363,9 +363,9 @@ Raw publication data → researcher profiles → CCS demo matches:
 
 2. `generate_ccs_demo_data.py`  
    Input: `Researcher_Profiles_For_PowerBI.csv`  
-   Output: `CCS_Demo_Data.csv`
+   Output: `data/CCS_Demo_Data.csv`
 
-See `CCS_DEMO_DATA_EXPLANATION.md` and `SDG_MATCHING_EXPLANATION.md` for full logic.
+See `docs/methodology/CCS_DEMO_DATA_EXPLANATION.md` and `docs/methodology/SDG_MATCHING_EXPLANATION.md` for full logic.
 
 ---
 
@@ -402,11 +402,11 @@ Comprehensive documentation is available in the `/docs` folder:
 
 ### Additional Resources
 
-- 📋 [CCS Demo Data Explanation](CCS_DEMO_DATA_EXPLANATION.md) - Data processing pipeline documentation
-- 🎯 [SDG Matching Explanation](SDG_MATCHING_EXPLANATION.md) - Detailed SDG matching algorithm
-- 🧾 [Data Sources](DATA_SOURCES.md) - Fields used and derived
-- 📚 [Data Dictionary](DATA_DICTIONARY.md) - Column definitions for demo data
-- 🧪 [Methodology Summary](METHODOLOGY.md) - Pipeline, scoring, limitations
+- 📋 [CCS Demo Data Explanation](docs/methodology/CCS_DEMO_DATA_EXPLANATION.md) - Data processing pipeline documentation
+- 🎯 [SDG Matching Explanation](docs/methodology/SDG_MATCHING_EXPLANATION.md) - Detailed SDG matching algorithm
+- 🧾 [Data Sources](docs/methodology/DATA_SOURCES.md) - Fields used and derived
+- 📚 [Data Dictionary](docs/methodology/DATA_DICTIONARY.md) - Column definitions for demo data
+- 🧪 [Methodology Summary](docs/methodology/METHODOLOGY.md) - Pipeline, scoring, limitations
 - 📊 [Dashboard Summary Documentation](!!!%20for%20distribution%20dashboard%20summary%20documentation.docx) - Power BI dashboard guide
 - 📄 [Collaboration Hub Documentation](Collab%20hub.pdf) - Collaboration features guide
 - 📑 [Full Project Documentation](The%20Illinois%20Sustainability%20Impact%20Engine(1).docx.pdf) - Complete project documentation
@@ -513,27 +513,30 @@ sustainability_case_competition/
 ├── README.md                          # This file
 ├── requirements.txt                   # Python dependencies
 ├── .gitignore                         # Git ignore rules
+├── data/                              # Demo data for Power BI
+│   └── CCS_Demo_Data.csv
 ├── docs/                              # Project documentation
-│   ├── 01_problem_statement (1).md
+│   ├── 01_problem_statement.md
 │   ├── 02_stakeholder_analysis.md
 │   ├── 03_solution_architecture.md
 │   ├── 04_scoring_and_metrics.md
 │   ├── 05_insights_and_impact.md
-│   └── 06_limitations_and_future_work.md
-├── scripts/                           # Python data processing scripts
-│   ├── README.md
-│   ├── build_collab_hub_from_scratch.py
-│   └── generate_ccs_demo_data.py
+│   ├── 06_limitations_and_future_work.md
+│   └── methodology/                   # Transparency and scoring details
+│       ├── CCS_DEMO_DATA_EXPLANATION.md
+│       ├── SDG_MATCHING_EXPLANATION.md
+│       ├── DATA_SOURCES.md
+│       ├── DATA_DICTIONARY.md
+│       └── METHODOLOGY.md
+├── scripts/                           # Data processing notes
+│   └── README.md
 ├── screenshots/                       # Dashboard screenshots
 │   ├── Sustainability.png
 │   ├── research.png
 │   ├── collabration_hub.png
 │   └── Impact_engine_pro.png
-├── presentation/                      # Competition presentation
-│   └── Case Comp.pdf
-├── CCS_DEMO_DATA_EXPLANATION.md       # Data pipeline documentation
-├── SDG_MATCHING_EXPLANATION.md        # SDG matching algorithm
-└── [Additional documentation files]
+└── presentation/                      # Competition presentation
+    └── Case Comp.pdf
 ```
 
 ---

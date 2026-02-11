@@ -21,7 +21,7 @@ Processes raw publication CSV data and creates aggregated researcher profiles.
 Generates collaboration matches and calculates Collaboration Compatibility Scores.
 
 **Input**: `Researcher_Profiles_For_PowerBI.csv`
-**Output**: `CCS_Demo_Data.csv` (collaboration matches with scores)
+**Output**: `data/CCS_Demo_Data.csv` (collaboration matches with scores)
 
 **What it does**:
 - Creates simulated user searches
@@ -51,12 +51,12 @@ Researcher_Profiles_For_PowerBI.csv
     ↓
 generate_ccs_demo_data.py
     ↓
-CCS_Demo_Data.csv
+data/CCS_Demo_Data.csv
 ```
 
 For detailed documentation, see:
-- [CCS_DEMO_DATA_EXPLANATION.md](../CCS_DEMO_DATA_EXPLANATION.md)
-- [SDG_MATCHING_EXPLANATION.md](../SDG_MATCHING_EXPLANATION.md)
+- [CCS_DEMO_DATA_EXPLANATION.md](../docs/methodology/CCS_DEMO_DATA_EXPLANATION.md)
+- [SDG_MATCHING_EXPLANATION.md](../docs/methodology/SDG_MATCHING_EXPLANATION.md)
 
 ## Note on availability
 If the Python scripts are not included in this public repository, this README
