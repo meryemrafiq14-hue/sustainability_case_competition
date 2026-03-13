@@ -341,27 +341,9 @@ def load_researcher_profiles():
         return None
 
 def get_researcher_profiles_with_fallback():
-    """Get researcher profiles with file upload fallback - use this in UI code"""
-    # Try loading from file system first
+    """Get researcher profiles from the embedded publications.csv in the repo."""
+    # Always rely on the publications.csv file shipped with the app
     df = load_researcher_profiles()
-
-    # If not found, fall back to user upload
-    if df is None:
-        st.warning("The `publications.csv` file is not available on this deployment. Please upload the original publications CSV to use the app.")
-        uploaded = st.file_uploader("Upload publications.csv", type=["csv"])
-
-        if uploaded is not None:
-            try:
-                uploaded_df = pd.read_csv(uploaded, low_memory=False)
-                st.session_state.uploaded_publications_df = uploaded_df
-                df = build_researcher_profiles_from_original(uploaded_df)
-                if df is None or len(df) == 0:
-                    st.error("The uploaded CSV could not be processed into researcher profiles. Please check the file format.")
-                    return None
-            except Exception as e:
-                st.error(f"Error reading uploaded CSV: {e}")
-                return None
-
     return df
 
 # Initialize session state
