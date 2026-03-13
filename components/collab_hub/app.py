@@ -22,61 +22,59 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Dark theme CSS to match main site
+# Light theme CSS to match dashboard-style UI
 st.markdown("""
 <style>
-        /* Match main site dark theme */
-        .stApp {
-            background: linear-gradient(180deg, #0a1628 0%, #13294B 100%);
-        }
-        
-        /* Card styling to match main site */
-        .stContainer > div {
-            background: #1e3a5f;
-            border-radius: 12px;
-            padding: 1.5rem;
-        }
-        
-        /* Button styling - Enhanced */
-        .stButton > button {
-            background: linear-gradient(135deg, #E84A27 0%, #FF6B4A 100%);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            padding: 0.75rem 2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(232, 74, 39, 0.3);
-        }
-        
-        .stButton > button:hover {
-            background: linear-gradient(135deg, #c43a1f 0%, #E84A27 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(232, 74, 39, 0.4);
-        }
-        
-        /* Text colors */
-        h1, h2, h3 {
-            color: white !important;
-        }
-        
-        p, .stMarkdown {
-            color: #e0e0e0;
-        }
-        
-        /* Improved form styling */
-        .stSelectbox label, .stRadio label {
-            color: #fff !important;
-            font-weight: 600;
-        }
-        
-        /* Better spacing */
-        .main .block-container {
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-        }
-    </style>
-    """, unsafe_allow_html=True)
+    /* App background & layout */
+    .stApp {
+        background-color: #f5f7fb;
+    }
+    .main .block-container {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+
+    /* Global typography */
+    h1, h2, h3 {
+        color: #13294B !important;
+        font-weight: 700;
+    }
+    p, .stMarkdown {
+        color: #333333;
+    }
+
+    /* Generic card containers */
+    .stContainer > div {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
+    }
+
+    /* Button styling */
+    .stButton > button {
+        background: linear-gradient(135deg, #E84A27 0%, #FF8A4A 100%);
+        color: #ffffff;
+        border: none;
+        border-radius: 10px;
+        font-weight: 600;
+        padding: 0.6rem 1.6rem;
+        box-shadow: 0 4px 10px rgba(232, 74, 39, 0.25);
+        transition: all 0.2s ease;
+    }
+    .stButton > button:hover {
+        background: linear-gradient(135deg, #c43a1f 0%, #E84A27 100%);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 14px rgba(232, 74, 39, 0.35);
+    }
+
+    /* Form labels */
+    .stSelectbox label, .stRadio label {
+        color: #13294B !important;
+        font-weight: 600;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 # Cache the model loading to avoid reloading on every interaction
 @st.cache_resource
@@ -390,31 +388,20 @@ if st.session_state.selected_path is None:
     st.markdown("""
     <style>
         .path-card {
-            background: linear-gradient(135deg, #1e3a5f 0%, #2a4a6f 100%);
+            background: #ffffff;
             border-radius: 16px;
             padding: 2.5rem 2rem;
             text-align: center;
             height: 100%;
-            min-height: 280px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
+            min-height: 260px;
+            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+            transition: all 0.2s ease;
+            border: 1px solid #e2e8f0;
         }
         .path-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 14px 28px rgba(15, 23, 42, 0.12);
             border-color: #E84A27;
-        }
-        .path-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #E84A27, #FF6B4A);
         }
         .path-icon {
             font-size: 3.5rem;
@@ -422,7 +409,7 @@ if st.session_state.selected_path is None:
             display: block;
         }
         .path-title {
-            color: #fff;
+            color: #13294B;
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 0.75rem;
@@ -430,17 +417,17 @@ if st.session_state.selected_path is None:
         }
         .path-audience {
             color: #E84A27;
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 600;
-            margin: 1rem 0;
+            margin: 0.75rem 0;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.6px;
         }
         .path-description {
-            color: #e0e0e0;
+            color: #4b5563;
             font-size: 0.95rem;
             line-height: 1.6;
-            margin-top: 1rem;
+            margin-top: 0.75rem;
         }
         .path-container {
             display: flex;
@@ -456,9 +443,9 @@ if st.session_state.selected_path is None:
     """, unsafe_allow_html=True)
     
     st.markdown("""
-    <div style='text-align: center; margin: 2rem 0;'>
-        <h2 style='color: #13294B; font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;'>Choose Your Path</h2>
-        <p style='color: #666; font-size: 1rem;'>Select the option that best describes your role</p>
+    <div style='text-align: center; margin: 1.5rem 0 0.5rem 0;'>
+        <h2 style='color: #13294B; font-size: 2rem; font-weight: 700; margin-bottom: 0.25rem;'>Choose Your Path</h2>
+        <p style='color: #4b5563; font-size: 0.98rem;'>Select the option that best describes your role</p>
     </div>
     """, unsafe_allow_html=True)
     
@@ -799,25 +786,25 @@ CSV files found in directories:
                     mode="gauge+number",
                     value=score,
                     domain={'x': [0, 1], 'y': [0, 1]},
-                    title={'text': "Match Quality", 'font': {'size': 18, 'color': '#fff'}},
-                    number={'font': {'size': 48, 'color': '#E84A27'}},
+                    title={'text': "Match Quality", 'font': {'size': 18, 'color': '#13294B'}},
+                    number={'font': {'size': 40, 'color': '#E84A27'}},
                     gauge={
-                        'axis': {'range': [None, 100], 'tickcolor': '#fff'},
+                        'axis': {'range': [None, 100], 'tickcolor': '#6b7280'},
                         'bar': {'color': "#E84A27", 'thickness': 0.8},
-                        'bgcolor': "#1e3a5f",
+                        'bgcolor': "#ffffff",
                         'borderwidth': 0,
                         'steps': [
-                            {'range': [0, 40], 'color': "rgba(200,200,200,0.2)"},
-                            {'range': [40, 70], 'color': "rgba(100,150,200,0.3)"},
-                            {'range': [70, 100], 'color': "rgba(19,41,75,0.5)"}
+                            {'range': [0, 40], 'color': "rgba(248, 250, 252, 1)"},
+                            {'range': [40, 70], 'color': "rgba(191, 219, 254, 0.8)"},
+                            {'range': [70, 100], 'color': "rgba(147, 197, 253, 1)"}
                         ],
                     }
                 ))
                 fig.update_layout(
-                    height=280,
-                    margin=dict(l=10, r=10, t=50, b=10),
+                    height=260,
+                    margin=dict(l=10, r=10, t=40, b=10),
                     paper_bgcolor='rgba(0,0,0,0)',
-                    font={'color': '#fff'}
+                    font={'color': '#111827'}
                 )
                 st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
             
