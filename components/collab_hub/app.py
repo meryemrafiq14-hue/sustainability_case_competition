@@ -766,10 +766,10 @@ CSV files found in directories:
             
             with col_score:
                 st.markdown(f"""
-                <div style='background: linear-gradient(135deg, #13294B 0%, #E84A27 100%); padding: 2rem; border-radius: 10px; color: white; margin-bottom: 2rem;'>
-                    <h2 style='color: white; margin-bottom: 0.5rem;'>{top_match['name']}</h2>
-                    <h1 style='color: white; font-size: 4rem; margin: 0;'>{top_match['total_score']:.0f}/100</h1>
-                    <p style='color: white; font-size: 1.2rem; margin-top: 0.5rem;'>Collaboration Compatibility Score</p>
+                <div style='background: #ffffff; padding: 2rem; border-radius: 12px; color: #13294B; margin-bottom: 2rem; box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12); border: 1px solid #e5e7eb;'>
+                    <h2 style='color: #13294B; margin-bottom: 0.5rem;'>{top_match['name']}</h2>
+                    <h1 style='color: #E84A27; font-size: 3.5rem; margin: 0;'>{top_match['total_score']:.0f}/100</h1>
+                    <p style='color: #4b5563; font-size: 1.1rem; margin-top: 0.5rem;'>Collaboration Compatibility Score</p>
                 </div>
                 """, unsafe_allow_html=True)
             
