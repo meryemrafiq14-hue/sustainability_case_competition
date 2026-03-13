@@ -345,6 +345,15 @@ The app generates explanations based on actual scores:
 - **60-74**: "Moderate career pairing - some collaboration benefits"
 - **0-59**: "Limited career alignment - may not offer strongest mentorship opportunities"
 
+### How to Interpret Overall CCS Values
+
+Because the CCS is built from real publication data and strict NLP similarity, we **do not expect most pairs to score in the 90–100 range**. In practice:
+- Scores in the **60–75** range are **moderate but meaningful matches** – there is real topic overlap, useful method complementarity, and workable career fit.
+- Scores in the **75–90+** range represent **very strong alignment** and are naturally rarer in real data.
+- Scores below **60** usually indicate that the match is driven more by one dimension (for example, method or career) than by overall fit.
+
+This scale is intentional: it reflects realistic collaboration potential rather than inflating every recommendation into a “perfect” match.
+
 ---
 
 ## 📊 Visual Components
