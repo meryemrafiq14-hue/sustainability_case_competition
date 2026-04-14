@@ -356,44 +356,38 @@ This scale is intentional: it reflects realistic collaboration potential rather 
 
 ---
 
-## 📊 Visual Components
+##  Current State & Future Roadmap                                                                                 
+                                                                                                                       
+  ### What Works Now                                                                                                   
+                                                                                                                       
+  The CCS delivers transparent, explainable recommendations grounded in real                                           
+  faculty input and actual publication data — no black box, no simulated data.
+  The complementarity-first approach is validated by domain expertise and                                              
+  produces meaningfully different (and better) recommendations than simple                                             
+  similarity matching.                                                                                                 
+                                                                                                                       
+  ### Known Constraints                                                                                                
+                  
+  1. **Method Inference**: Inferred from keywords — self-reported method selection                                     
+     is the natural next step for a production deployment.
+                                                                                                                       
+  2. **Career Stage**: Derived from publication history — an optional profile field                                    
+     would add precision with minimal friction.                                                                        
+                                                                                                                       
+  3. **NLP Model**: Uses a strong general-purpose model; upgrading to a                                                
+     research-specific model (e.g., SPECTER2) is a clear path to higher                                                
+     topic accuracy.                                                                                                   
+                  
+  4. **Network Effects**: Co-authorship data already exists in the dataset —                                           
+     incorporating it is scoped and achievable.
+                                                                                                                       
+  ### Roadmap                                                                                                          
+                                                                                                                       
+  - Broader faculty validation to confirm and refine CCS weights                                                       
+  - Self-reported method and career stage fields for higher signal inputs
+  - SPECTER2 embeddings for research-domain topic matching                                                             
+  - Co-authorship filtering to surface new vs. existing collaboration opportunities                                     
 
-### Gauge Chart
-
-- **Purpose**: Visual representation of match quality
-- **Range**: 0-100
-- **Color Zones**:
-  - 0-40: Light gray (low match)
-  - 40-70: Medium blue (moderate match)
-  - 70-100: Navy blue (strong match)
-- **Bar Color**: Orange (`#E84A27`) matching main site theme
-
-### Score Breakdown
-
-- **Three-column layout**: Topic, Method, Career scores
-- **Individual metrics**: Each with score and contextual explanation
-- **Formula display**: Shows exact calculation with weights
-
----
-
-## ⚠️ Limitations & Future Work
-
-### Current Limitations
-
-1. **Method Inference**: Simple keyword matching may miss nuance
-2. **SDG Assignment**: Relies on provided labels (may be sparse)
-3. **Career Stage**: Inferred from publication years only
-4. **NLP Model**: Uses general-purpose model, not domain-specific
-5. **Network Effects**: Existing collaborations not yet considered
-
-### Future Improvements
-
-- Validate scoring with faculty feedback and historical collaboration outcomes
-- Improve method inference with richer NLP features
-- Add uncertainty indicators for low-signal profiles
-- Incorporate full abstracts (currently limited to 2000 characters)
-- Enhance with domain-specific NLP models
-- Consider network effects and existing collaboration patterns
 
 ---
 
